@@ -2,7 +2,7 @@ const CACHE_NAME = 'bayam-tabur-v1';
 const urlsToCache = [
     '/bayamtabur/',
     '/bayamtabur/index.html',
-    '/bayamtabur/ikonbayamtabar.png',
+    '/bayamtabur/ikonbayamtabur.png',
     '/bayamtabur/manifest.json'
 ];
 
