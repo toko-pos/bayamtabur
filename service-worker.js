@@ -2,7 +2,7 @@ const CACHE_NAME = 'pos-fifo-v1';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/iconbayamtabur.png',
+    '/ikonbayamtabur.png',
     '/manifest.json'
 ];
 
