@@ -19,7 +19,6 @@
     <meta name="theme-color" content="#4CAF50">
 
     <style>
-        /* ===== RESET ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
@@ -32,7 +31,6 @@
             align-items: center;
         }
 
-        /* ===== CONTAINER UTAMA ===== */
         .container {
             width: 100%;
             height: 100vh;
@@ -40,7 +38,6 @@
             flex-direction: column;
         }
 
-        /* ===== HEADER ATAS ===== */
         .app-header {
             background: #4CAF50;
             color: white;
@@ -61,7 +58,6 @@
             opacity: 0.9;
         }
 
-        /* ===== IFRAME ===== */
         .app-iframe {
             width: 100%;
             flex: 1;
@@ -82,7 +78,6 @@
             align-items: center;
             background: white;
             z-index: 999;
-            font-family: Arial, sans-serif;
         }
         .loading-content {
             text-align: center;
@@ -120,7 +115,6 @@
             display: none;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .app-header h1 { font-size: 1rem; }
             .app-header .info { font-size: 0.7rem; }
@@ -149,15 +143,12 @@
     </style>
 </head>
 <body>
-    <!-- ===== MAIN CONTAINER ===== -->
     <div class="container">
-        <!-- HEADER -->
         <div class="app-header">
             <h1>🌿 Bayam Tabur</h1>
             <span class="info">📱 Aplikasi Kasir</span>
         </div>
 
-        <!-- IFRAME -->
         <iframe 
             id="mainIframe"
             class="app-iframe" 
@@ -182,7 +173,6 @@
     </div>
 
     <script>
-        // ===== HILANGKAN LOADING SAAT IFRAME SIAP =====
         const iframe = document.getElementById('mainIframe');
         const loading = document.getElementById('loadingScreen');
 
@@ -190,19 +180,16 @@
             loading.classList.add('hide');
         });
 
-        // Timeout jika loading terlalu lama (5 detik)
         setTimeout(function() {
             loading.classList.add('hide');
         }, 5000);
 
-        // ===== REGISTER SERVICE WORKER =====
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/bayamtabur/service-worker.js')
                 .then(() => console.log('✅ Service Worker terdaftar'))
                 .catch(err => console.log('❌ Gagal daftar SW:', err));
         }
 
-        // ===== DETEKSI MODE PWA =====
         if (window.matchMedia('(display-mode: standalone)').matches) {
             console.log('📱 Aplikasi berjalan dalam mode standalone (PWA)');
         }
