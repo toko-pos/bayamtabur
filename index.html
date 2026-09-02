@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>POS System - FIFO</title>
+
+    <!-- ====== FAVICON UNTUK TAB BROWSER ====== -->
+    <link rel="icon" type="image/png" href="iconbayamtabur.png">
+    <link rel="shortcut icon" type="image/png" href="iconbayamtabur.png">
+
+    <!-- ====== UNTUK PWA (AGAR BISA DIINSTAL DI HP) ====== -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- ====== WARNA TEMA UNTUK SPLASH SCREEN ====== -->
+    <meta name="theme-color" content="#4CAF50">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -58,5 +70,14 @@
         <span class="info">📱 Aplikasi Kasir</span>
     </div>
     <iframe class="app-iframe" src="https://script.google.com/macros/s/AKfycbyNsJE4KG_8HrelWz54GKA96OPMwyoSZ8sXYuZHYoRRGQQunNHGnG6EBV0B266uYt4rqw/exec"></iframe>
+
+    <!-- ====== REGISTER SERVICE WORKER UNTUK PWA ====== -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('✅ Service Worker terdaftar'))
+                .catch(err => console.log('❌ Gagal daftar SW:', err));
+        }
+    </script>
 </body>
 </html>
