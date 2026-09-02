@@ -77,9 +77,9 @@
             font-size: 1.2rem;
         }
         .loading img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 10px;
         }
         .loading.hide {
             display: none;
@@ -113,12 +113,12 @@
 
     <!-- LOADING SCREEN -->
     <div class="loading" id="loadingScreen">
-        <div style="text-align:center;">
-            <img src="iconbayamtabur.png" alt="Bayam Tabur" onerror="this.style.display='none'">
-            <div>Memuat Aplikasi...</div>
+        <div class="loading-content">
+            <img src="ikonbayamtabur.png" alt="Bayam Tabur" onerror="this.style.display='none'">
+            <div class="loading-text">Memuat Aplikasi...</div>
         </div>
     </div>
-
+    
     <script>
         // ====== HILANGKAN LOADING SAAT IFRAME SIAP ======
         const iframe = document.getElementById('mainIframe');
