@@ -22,7 +22,6 @@ self.addEventListener('fetch', event => {
                     return response;
                 }
                 return fetch(event.request).catch(() => {
-                    // Jika offline, tampilkan halaman offline
                     return caches.match('/bayamtabur/index.html');
                 });
             })
